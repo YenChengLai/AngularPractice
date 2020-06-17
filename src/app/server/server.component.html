@@ -4,21 +4,24 @@
     <button class="btn btn-primary" [disabled]="!inputText" (click)="clearInputOne()">Clear input1</button>
   </div>
   <div class="col-md-2">
-    <button class="btn btn-warning" [hidden]="!inputText2" (click)="showEvent($event)">Clear input2</button>
+    <button class="btn btn-dark" [hidden]="!inputText2" (click)="showEvent($event)">Clear input2</button>
   </div>
   <div class="col-md-2">
-    <button class="btn btn-danger" (click)="clickCount()">Click Count</button>
+    <button class="btn btn-warning" (click)="clickCount()">Click Count</button>
   </div>
   <div class="col-md-3"></div>
 </div>
 <div class="row mt-15">
   <div class="col-md-2"></div>
   <div class="col-md-4" align="right">
-    <span *ngIf="showHi" >Hi has been alerted for {{countHi}} times</span>
+    <p *ngIf="showHi; else notHitYet">Click has been hit for {{countHi}} times</p>
+    <ng-template #notHitYet>
+      <p class="redWord">Click hasn't been hit yet.</p>
+    </ng-template>
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-2">
-    <button class="btn btn-primary" (click)="reset()">reset</button>
+    <button class="btn btn-success" (click)="reset()">reset</button>
   </div>
   <div class="col-md-3"></div>
 </div>
@@ -32,15 +35,18 @@
   </div>
 </div>
 <div class="row mt-15">
-  <div class="col-md-1"></div>
-  <div class="col-md-6" align="right">
-    <span>result:</span>
+  <div class="col-md-6"></div>
+  <div class="col-md-1" align="right">
+    <span
+      [ngStyle]="{color: getColor4Text1()}"
+      [ngClass]="{bgColorForRed: getColor4Text1() == 'red'}">
+      result:
+    </span>
   </div>
   <div class="col-md-5">
     <span class="mt-10">{{inputText}}</span>
   </div>
 </div>
-
 <div class="row mt-10">
   <div class="col-md-1"></div>
   <div class="col-md-6" align="right">
@@ -51,9 +57,13 @@
   </div>
 </div>
 <div class="row mt-15">
-  <div class="col-md-1"></div>
-  <div class="col-md-6" align="right">
-    <span>result:</span>
+  <div class="col-md-6"></div>
+  <div class="col-md-1" align="right">
+    <span
+     [ngStyle]="{color: getColor4Text2()}"
+     [ngClass]="{bgColorForGreen: getColor4Text2() == 'green'}">
+     result:
+    </span>
   </div>
   <div class="col-md-5">
     <span class="mt-10">{{inputText2}}</span>

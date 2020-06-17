@@ -42,4 +42,15 @@ export class ServerComponent implements OnInit {
     this.inputText = '';
   }
 
+  getColor4Text1() {
+    return this.setColor(this.inputText);
+  }
+
+  getColor4Text2() {
+    return this.setColor(this.inputText2);
+  }
+
+  setColor(input) {
+    return !!input ? 'green' : 'red';
+  }
 }
