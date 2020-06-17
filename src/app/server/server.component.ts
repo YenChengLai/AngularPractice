@@ -6,35 +6,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
-
-  isDisabled = true;
-
-  isHidden = true;
-
   inputText: string;
 
   inputText2: string;
 
-  constructor() {
-    setTimeout(() => {
-      this.isDisabled = false;
-      this.isHidden = false;
-    }, 3000);
-  }
+  countHi = 0;
+
+  showHi = false;
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  sayHi() {
-    alert('Hi');
+  clickCount() {
+    this.countHi++;
+    this.showHi = true;
+  }
+
+  reset() {
+    this.showHi = false;
+    this.countHi = 0;
   }
 
   showEvent(event: Event) {
     console.log(event.target);
+    this.inputText2 = '';
   }
 
   showInputText(event: Event) {
     this.inputText = (<HTMLInputElement>event.target).value;
+  }
+
+  clearInputOne() {
+    this.inputText = '';
   }
 
 }
