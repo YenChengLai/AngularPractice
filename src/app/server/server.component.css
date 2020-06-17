@@ -5,3 +5,15 @@
 .mt-15 {
   margin-top: 15px
 }
+
+.redWord {
+  color:red
+}
+
+.bgColorForRed {
+  background-color: lightcyan
+}
+
+.bgColorForGreen {
+  background-color: lightyellow
+}
