@@ -37,9 +37,7 @@
 <div class="row mt-15">
   <div class="col-md-6"></div>
   <div class="col-md-1" align="right">
-    <span
-      [ngStyle]="{color: getColor4Text1()}"
-      [ngClass]="{bgColorForRed: getColor4Text1() == 'red'}">
+    <span [ngStyle]="{color: getColor4Text1()}" [ngClass]="{bgColorForRed: getColor4Text1() == 'red'}">
       result:
     </span>
   </div>
@@ -59,13 +57,15 @@
 <div class="row mt-15">
   <div class="col-md-6"></div>
   <div class="col-md-1" align="right">
-    <span
-     [ngStyle]="{color: getColor4Text2()}"
-     [ngClass]="{bgColorForGreen: getColor4Text2() == 'green'}">
-     result:
+    <span [ngStyle]="{color: getColor4Text2()}" [ngClass]="{bgColorForGreen: getColor4Text2() == 'green'}">
+      result:
     </span>
   </div>
   <div class="col-md-5">
     <span class="mt-10">{{inputText2}}</span>
   </div>
+</div>
+<div class="row mt-15">
+  <div class="col-md-6" align="right">Programming Languages:</div>
+  <div class="col-md-1" align="center" *ngFor="let skill of skills">{{skill}}</div>
 </div>

@@ -14,6 +14,8 @@ export class ServerComponent implements OnInit {
 
   showHi = false;
 
+  skills = ['Java', 'JavaScript', 'Go', 'Python'];
+
   constructor() { }
 
   ngOnInit() {
